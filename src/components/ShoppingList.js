@@ -2,10 +2,17 @@ import React from "react";
 import Item from "./Item";
 
 function ShoppingList({ items }) {
+  
+  function handleItemClick() {
+    const newItemArray = items.filter((item) => item.category !== category);
+  setItems(newItemArray);
+  }
+  
+  
   return (
     <div className="ShoppingList">
       <div className="Filter">
-        <select name="filter">
+        <select name="filter" onClick={handleItemClick}>
           <option value="All">Filter by category</option>
           <option value="Produce">Produce</option>
           <option value="Dairy">Dairy</option>
